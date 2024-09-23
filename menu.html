@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .charheader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .char {
+            text-align: center;
+            word-spacing: 0px;
+            font-size: 50px;
+            letter-spacing: 2px;
+        }
+
+        .char1 {
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            animation: textGradient 3s infinite;
+        }
+
+        @keyframes textGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+        }
+
+        .menu {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 190px;
+            list-style-type: none;
+            margin: 10px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu li {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #00b09b;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 12px;
+            height: 40px;
+            text-align: center;
+            word-wrap: break-word;
+            background-color: rgba(0, 176, 155, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: #ffffff;
+            background-color: #00b09b;
+        }
+
+        /* ปรับขนาดสำหรับมือถือ */
+        @media (max-width: 768px) {
+            .menu-container {
+                width: 80%; /* ใช้ความกว้างตามหน้าจอ */
+            }
+
+            .menu a {
+                font-size: 16px;
+                height: auto;
+                width: auto;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="charheader">
+        <p>
+            <span class="char char1">HealthCheck</span>
+        </p>
+    </div>
+
+    <div class="menu-container">
+        <ul class="menu">
+            <li><a href="bmi/bmi_index.html">คำนวณหาค่า BMI</a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="blfood/blfood_index.html">ตรวจสอบปริมาณสาร<br>ในกระแสเลือด</a></li>
+        </ul>
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
