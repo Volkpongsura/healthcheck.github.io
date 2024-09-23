@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLFood</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+        .average {
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            margin: 30px;
+            margin-top: 50px
+        }
+
+        .describe {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(135, 3, 201);
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: calc(100% - 100px);
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .avoid, .recommended {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        .information {
+            margin-bottom: 30px;
+        }
+
+        .avr {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px;
+            color: green;
+        }
+
+        .reference {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="average"><b>ค่าPotassiumในเลือดของต่ำกว่าเกณฑ์</b></div>
+    <div class="describe">ค่า Potassium คือ ระดับของแร่ธาตุโพแทสเซียมที่มีอยู่ในกระแสเลือด โพแทสเซียมเป็นแร่ธาตุสำคัญที่มีบทบาทในกระบวนการต่างๆ ของร่างกาย เช่น การทำงานของกล้ามเนื้อ หัวใจ และการส่งสัญญาณของระบบประสาท</div>
+    <div class="content">
+        <div class="avoid">
+            <div class="heading">อาหารที่ควรหลีกเลี่ยง</div>
+            <div class="information">1. อาหารกระป๋อง เช่น ซุปกระป๋อง ปลากระป๋อง ผลไม้กระป๋อง</div>
+            <div class="information">2. แฮม ไส้กรอก และเบคอน</div>
+            <div class="information">3. เครื่องดื่มแอลกอฮอล์ เช่น เหล้า ไวน์ เบียร์</div>
+            <div class="information">4. ขนมขบเคี้ยว เช่น มันฝรั่งทอด</div>
+        </div>
+        <div class="recommended">
+            <div class="heading">อาหารที่แนะนำ</div>
+            <div class="information">1. ผักที่มีปริมาณโพแทสเซียมสูง เช่น ผักขม บีทรูท มันฝรั่ง ฟักทอง</div>
+            <div class="information">2. ผลไม้ที่มีปริมาณโพแทสเซียมสูง เช่น กล้วย อะโวคาโด ทุเรียน ลำไย</div>
+            <div class="information">3. ผลิตภัณฑ์จากนม เช่น นม โยเกิร์ต</div>
+            <div class="information">4. เนื้อสัตว์ เช่น เนื้อไก่ ปลา เนื้อวัว</div>
+            <div class="information">5. ถั่วและธัญพืช เช่น อัลมอนด์ ถั่วเหลือง ถั่วลันเตา</div>
+        </div>
+    </div>
+    <div class="avr">เกณฑ์ปกติอยู่ที่ 3.5-5 mEq/L</div>
+    <div class="reference">อ้างอิงข้อมูลจาก
+        <ol><a href="https://sriphat.med.cmu.ac.th/th/knowledge-62" class="link" target="_blank">https://sriphat.med.cmu.ac.th/th/knowledge-62</a></ol>
+        <ol><a href="https://ch9airport.com/th/โพแทสเซียมในเลือดต่ำ/" class="link" target="_blank">https://ch9airport.com/th/โพแทสเซียมในเลือดต่ำ/</a></ol>
+        <ol><a href="https://www.pobpad.com/hypokalemia" class="link" target="_blank">https://www.pobpad.com/hypokalemia</a></ol>
+        <ol><a href="https://www.kidney.org/" class="link" target="_blank">https://www.kidney.org/</a></ol>
+    </div>
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
