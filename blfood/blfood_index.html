@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบปริมาณสารในกระแสเลือด</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+        
+        .charheader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .char {
+            display: inline-block;
+            text-align: center; 
+            word-spacing: -20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .char1 {
+            color: #000000;
+        }
+        
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            width: 100%;
+            margin: 20px 20px 10px 20px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        input, button, select {
+            width: 100%;
+            font-size: 18px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #f9f9f9; /* เพิ่มพื้นหลังสีอ่อนในช่องกรอก */
+        }
+
+        input:focus, select:focus {
+            border-color: #5F99FF;
+            outline: none;
+            box-shadow: 0 0 8px rgba(95, 153, 255, 0.2);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button[type="submit"] {
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-description {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .menu-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .menu-button {
+            width: 140px;
+            height: 50px;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #96c93d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0px 10px 20px 10px;
+        }
+
+        .menu-button:hover {
+            color: black;
+            background-color: #00b09b;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="charheader">
+        <p>
+            <span class="char char1">วิเคราะห์ระดับสารในกระแสเลือด</span>
+        </p>
+    </div>
+
+    <div class="form-container">
+        <div class="form-header">กรอกข้อมูลเพื่อวิเคราะห์</div>
+        <div class="form-description">กรุณากรอกข้อมูลที่จำเป็นเพื่อทำการวิเคราะห์ผลลัพธ์</div>
+        <form id="blfoodForm" action="/submit" method="post">
+            <select id="type" name="type" required>
+                <option value="" disabled selected>ประเภทของสารที่ต้องการวิเคราะห์</option>
+                <option value="Glucose">Glucose (mg/dL) *ด้วยวิธี SMBG*</option>
+                <option value="BUN">BUN (mg/dL)</option>
+                <option value="Creatinine">Creatinine (mg/dL)</option>
+                <option value="Sodium">Sodium (mEq/L)</option>
+                <option value="Potassium">Potassium (mEq/L)</option>
+                <option value="Chloride">Chloride (mEq/L)</option>
+                <option value="Calcium">Calcium (mg/dL)</option>
+                <option value="Phosphorus">Phosphorus (mEq/L)</option>
+            </select><br>
+            <input type="number" id="blood" name="blood" placeholder="ปริมาณสารในกระแสเลือด" step="0.0001" required><br>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>เพศ</option>
+                <option value="Male">ชาย</option>
+                <option value="Female">หญิง</option>
+            </select><br>
+            <input type="number" id="age" name="age" placeholder="อายุ (ปี)" min="0" required><br>
+            <button type="submit">ส่งข้อมูล</button>
+        </form>
+    </div>
+
+    <div class="menu-button-container"></div>
+        <button class="menu-button" onclick="goBack()">กลับหน้าหลัก</button>
+    </div>
+
+    <script>
+        document.getElementById('blfoodForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var blood = parseFloat(document.getElementById('blood').value);
+            var type = document.getElementById('type').value;
+            var age = parseInt(document.getElementById('age').value);
+            var gender = document.getElementById('gender').value;
+
+            if (type === 'Glucose') {
+                if (blood > 125) {
+                    window.location.href = 'glucose/glucose_veryhigh.html';
+                } else if (blood > 100) {
+                    window.location.href = 'glucose/glucose_high.html';
+                } else if (blood < 70) {
+                    window.location.href = 'glucose/glucose_low.html';
+                } else {
+                    window.location.href = 'glucose/glucose_normal.html';
+                }
+            } else if (type === 'BUN') {
+                if (age >= 18) {
+                    if (blood > 20) {
+                        window.location.href = 'bun/bun_high.html';
+                    } else if (blood < 10) {
+                        window.location.href = 'bun/bun_low.html';
+                    } else {
+                        window.location.href = 'bun/bun_normal.html';
+                    }
+                } else if (age < 18){
+                    if (blood > 18) {
+                        window.location.href = 'bun/bun_high.html';
+                    } else if (blood < 5) {
+                        window.location.href = 'bun/bun_low.html';
+                    } else {
+                        window.location.href = 'bun/bun_normal.html';
+                    }
+                }
+            } else if (type === 'Creatinine') {
+                if (gender === 'Male') {
+                    if (blood > 1.2) {
+                        window.location.href = 'creatinine/creatinine_high.html';
+                    } else if (blood < 0.6) {
+                        window.location.href = 'creatinine/creatinine_low.html';
+                    } else {
+                        window.location.href = 'creatinine/creatinine_normal.html';
+                    }
+                } else if (gender === 'Female'){
+                    if (blood > 1.1) {
+                        window.location.href = 'creatinine/creatinine_high.html';
+                    } else if (blood < 0.5) {
+                        window.location.href = 'creatinine/creatinine_low.html';
+                    } else {
+                        window.location.href = 'creatinine/creatinine_normal.html';
+                    }
+                }
+            } else if (type === 'Sodium') {
+                if (blood > 5) {
+                    window.location.href = 'sodium/sodium_high.html';
+                } else if (blood < 135) {
+                    window.location.href = 'sodium/sodium_low.html';
+                } else {
+                    window.location.href = 'sodium/sodium_normal.html';
+                }
+            } else if (type === 'Potassium') {
+                if (blood > 5) {
+                    window.location.href = 'potassium/potassium_high.html';
+                } else if (blood < 3.5) {
+                    window.location.href = 'potassium/potassium_low.html';
+                } else {
+                    window.location.href = 'potassium/potassium_normal.html';
+                }
+            } else if (type === 'Chloride') {
+                if (blood > 106) {
+                    window.location.href = 'chloride/chloride_high.html';
+                } else if (blood < 96) {
+                    window.location.href = 'chloride/chloride_low.html';
+                } else {
+                    window.location.href = 'chloride/chloride_normal.html';
+                }
+            } else if (type === 'Calcium') {
+                if (blood > 10.5) {
+                    window.location.href = 'calcium/calcium_high.html';
+                } else if (blood < 8.5) {
+                    window.location.href = 'calcium/calcium_low.html';
+                } else {
+                    window.location.href = 'calcium/calcium_normal.html';
+                }
+            } else if (type === 'Phosphorus') {
+                if (blood > 5.5) {
+                    window.location.href = 'phosphorus/phosphorus_high.html';
+                } else if (blood < 3.5) {
+                    window.location.href = 'phosphorus/phosphorus_low.html';
+                } else {
+                    window.location.href = 'phosphorus/phosphorus_normal.html';
+                }
+            } else {
+                alert('กรุณาเลือกประเภทของสารที่ต้องการตรวจ');
+            }
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+
+    </script>
+</body>
+</html>
