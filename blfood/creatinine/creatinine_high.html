@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLFood</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                color: red;
+            }
+            50% {
+                transform: scale(1.05);
+                color: darkred;
+            }
+            100% {
+                transform: scale(1);
+                color: red;
+            }
+        }
+
+        .average {
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            margin: 30px;
+            margin-top: 50px;
+            animation: pulse 1.5s infinite;
+        }
+
+
+        .describe {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(135, 3, 201);
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: calc(100% - 100px);
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .avoid, .recommended {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        .information {
+            margin-bottom: 30px;
+        }
+
+        .avr {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px;
+            color: green;
+        }
+
+        .reference {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="average"><b>ค่าCreatinineในเลือดของท่านสูงเกินเกณฑ์</b></div>
+    <div class="describe">ค่า Creatinine คือ ค่าที่สะท้อนถึงสมรรถภาพการทำงานของไต</div>
+    <div class="content">
+        <div class="avoid">
+            <div class="heading">อาหารที่ควรหลีกเลี่ยง</div>
+            <div class="information">1. อาหารที่มีโพแทสเซียมสูง เช่น กล้วย มันฝรั่ง มะเขือเทศ</div>
+            <div class="information">2. อาหารที่มีเกลือสูง เช่น บะหมี่กึ่งสำเร็จรูป อาหารกระป๋อง อาหารหมักดอง</div>
+            <div class="information">3. อาหารที่มีฟอสฟอรัสสูง เช่น ชีส ถั่วเปลือกแข็ง ครื่องดื่มที่มีฟอสฟอรัสสูง</div>
+            <div class="information">4. อาหารที่มีโปรตีนสูง เช่น เนื้อวัว เนื้อหมู ไส้กรอก แฮม</div>
+        </div>
+        <div class="recommended">
+            <div class="heading">อาหารที่แนะนำ</div>
+            <div class="information">1. ผักและผลไม้ที่มีโพแทสเซียมต่ำ เช่น แครอท แอปเปิ้ล สตรอเบอร์รี่ บลูเบอร์รี่ กะหล่ำปลี แตงกวา</div>
+            <div class="information">2. อาหารที่มีโปรตีนต่ำ เช่น ไข่ขาว โยเกิร์ต เนื้อไก่ ปลา</div>
+            <div class="information">3. ธัญพืชที่ไม่เติมเกลือ เช่น ข้าวกล้อง ข้าวโอ๊ต</div>
+            <div class="information">4. อาหารที่มีน้ำเยอะ เช่น น้ำเปล่า น้ำมะพร้าว</div>
+        </div>
+    </div>
+    <div class="avr">เกณฑ์ปกติของผู้ชายอยู่ที่ 0.6-1.2 mg/dL<br>เกณฑ์ปกติของผู้หญิงอยู่ที่ 0.5-1.1 mg/dL</div>
+    <div class="reference">อ้างอิงข้อมูลจาก
+        <ol><a href="https://www.pptvhd36.com/health/care/5071" class="link" target="_blank">https://www.pptvhd36.com/health/care/5071</a></ol>
+        <ol><a href="https://samitivejchinatown.com/th/article/health-check/renal-function-test" class="link" target="_blank">https://samitivejchinatown.com/th/article/health-check/renal-function-test</a></ol>
+        <ol><a href="https://vichaivej-nongkhaem.com/health-info/ตรวจการทำงานไต" class="link" target="_blank">https://vichaivej-nongkhaem.com/health-info/ตรวจการทำงานไต</a></ol>
+        <ol><a href="https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/eating-nutrition" class="link" target="_blank">https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/eating-nutrition</a></ol>
+        <ol><a href="https://www.kidneyfund.org/living-kidney-disease/healthy-eating-activity/kidney-friendly-eating-plan" class="link" target="_blank">https://www.kidneyfund.org/living-kidney-disease/healthy-eating-activity/kidney-friendly-eating-plan</a></ol>
+    </div>
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

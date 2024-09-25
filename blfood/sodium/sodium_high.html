@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLFood</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                color: red;
+            }
+            50% {
+                transform: scale(1.05);
+                color: darkred;
+            }
+            100% {
+                transform: scale(1);
+                color: red;
+            }
+        }
+
+        .average {
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            margin: 30px;
+            margin-top: 50px;
+            animation: pulse 1.5s infinite;
+        }
+
+
+        .describe {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(135, 3, 201);
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: calc(100% - 100px);
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .avoid, .recommended {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        .information {
+            margin-bottom: 30px;
+        }
+
+        .avr {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px;
+            color: green;
+        }
+
+        .reference {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="average"><b>ค่าSodiumในเลือดของท่านสูงเกินเกณฑ์</b></div>
+    <div class="describe">ค่า Sodium คือ ค่าระดับโซเดียมที่ตรวจพบในเลือด ซึ่งเป็นหนึ่งในอิเล็กโทรไลต์สำคัญที่มีบทบาทในการควบคุมสมดุลของน้ำในร่างกาย การทำงานของเส้นประสาท และการหดตัวของกล้ามเนื้อ</div>
+    <div class="content">
+        <div class="avoid">
+            <div class="heading">อาหารที่ควรหลีกเลี่ยง</div>
+            <div class="information">1. อาหารดองเค็ม เช่น ไข่เค็ม ปลาเค็ม หอยดองน้ำปลา</div>
+            <div class="information">2. อาหารหมักดอง (เปรี้ยวและเค็ม) เช่น ปลาส้ม แหนม</div>
+            <div class="information">3. อาหารแปรรูป เช่น ไส้กรอก แฮม เบคอน กุนเชียง หมูแผ่น หมูหยอง</div>
+            <div class="information">4. อาหารที่ใส่ผงฟู (โซเดียมไบคาร์บอเนต) เช่น ขนมอบต่างๆ เค้ก คุกกี้ พาย ฯลฯ</div>
+        </div>
+        <div class="recommended">
+            <div class="heading">อาหารที่แนะนำ</div>
+            <div class="information">1. ผักและผลไม้ที่มีน้ำสูง เช่น แตงโม ส้ม แตงกวา ผักใบเขียว</div>
+            <div class="information">2. น้ำเปล่า : ควรดื่มน้ำเปล่ามากๆ เพื่อช่วยในการเจือจางโซเดียมในเลือด</div>
+            <div class="information">3. อาหารที่มีโพแทสเซียมสูง เช่น กล้วย อะโวคาโด มะเขือเทศ มันฝรั่ง</div>
+        </div>
+    </div>
+    <div class="avr">เกณฑ์ปกติอยู่ที่ 135-145 mEq/L</div>
+    <div class="reference">อ้างอิงข้อมูลจาก
+        <ol><a href="https://sriphat.med.cmu.ac.th/th/knowledge-61" class="link" target="_blank">https://sriphat.med.cmu.ac.th/th/knowledge-61</a></ol>
+        <ol><a href="https://www.niddk.nih.gov/health-information/kidney-disease" class="link" target="_blank">https://www.niddk.nih.gov/health-information/kidney-disease</a></ol>
+        <ol><a href="https://www.pobpad.com/hypernatremia" class="link" target="_blank">https://www.pobpad.com/hypernatremia</a></ol>
+        <ol><a href="https://heart.kku.ac.th/index.php?option=com_k2&view=item&id=372:food" class="link" target="_blank">https://heart.kku.ac.th/index.php?option=com_k2&view=item&id=372:food</a></ol>
+    </div>
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

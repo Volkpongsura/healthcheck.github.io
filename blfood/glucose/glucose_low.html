@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLFood</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                color: red;
+            }
+            50% {
+                transform: scale(1.05);
+                color: darkred;
+            }
+            100% {
+                transform: scale(1);
+                color: red;
+            }
+        }
+
+        .average {
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            margin: 30px;
+            margin-top: 50px;
+            animation: pulse 1.5s infinite;
+        }
+
+
+        .describe {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(135, 3, 201);
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: calc(100% - 100px);
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .avoid, .recommended {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        .information {
+            margin-bottom: 30px;
+        }
+
+        .avr {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px;
+            color: green;
+        }
+
+        .reference {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="average"><B>ค่าGlucoseในเลือดของท่านต่ำกว่าเกณฑ์</B></div>
+    <div class="describe">ค่า Glucose คือ ระดับของน้ำตาลในเลือด ณ เวลาที่ตรวจ</div>
+    <div class="content">
+        <div class="avoid">
+            <div class="heading">อาหารที่ควรหลีกเลี่ยง</div>
+            <div class="information">1. แอลกอฮอล์(ขณะท้องว่าง)</div>
+            <div class="information">2. อาหารที่ขาดเส้นใย เช่น ขนมปังขาวหรือข้าวขาว</div>
+            <div class="information">3. อาหารที่มีน้ำตาลสูงและดัชนีน้ำตาลสูง เช่น ขนมหวาน น้ำอัดลม</div>
+        </div>
+        <div class="recommended">
+            <div class="heading">อาหารที่แนะนำ</div>
+            <div class="information">อาหารหรือดื่มเครื่องดื่มที่มีคาร์โบไฮเดรต 15 เช่น</div>
+            <div class="information"><li>กลูโคส 4 เม็ดหรือ กลูโคสเจล 1 หลอด</li></div>
+            <div class="information"><li>น้ำผลไม้ 1/2 ถ้วย (4 ออนซ์)</li></div>
+            <div class="information"><li>น้ำอัดลม 1/2 กระป๋อง (4 - 6 ออนซ์) ต้องไม่ใช่น้ำอัดลมแบบแคลอรี่ต่ำหรือลดน้ำตาลลง</li></div>
+            <div class="information"><li>น้ำตาลหรือน้ำผึ้ง 1 ช้อนโต๊ะ</li></div>
+            <div class="information"><li>ลูกเกด 2 ช้อนโต๊ะ</li></div>
+        </div>
+    </div>
+    <div class="avr">เกณฑ์ปกติอยู่ที่ 70-100 mg/dL<span style="color: red;">(หากเกิน 125 mg/dL มีความเสี่ยงเป็นโรคเบาหวาน)</span></div>
+    <div class="reference">อ้างอิงข้อมูลจาก
+        <ol><a href="https://www.bangkokhospital.com/content/why-measure-blood-sugar-levels" class="link" target="_blank">https://www.bangkokhospital.com/content/why-measure-blood-sugar-levels</a></ol>
+        <ol><a href="https://www.samitivejhospitals.com/th/article/detail/%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B2%E0%B8%A5%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%B3" class="link" target="_blank">https://www.samitivejhospitals.com/th/article/detail/น้ำตาลในเลือดต่ำ</a></ol>
+        <ol><a href="https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/low-blood-glucose-hypoglycemia" class="link" target="_blank">https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/low-blood-glucose-hypoglycemia</a></ol>
+    </div>
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
