@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLFood</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+                color: red;
+            }
+            50% {
+                transform: scale(1.2);
+                color: darkred;
+            }
+            100% {
+                transform: scale(1);
+                color: red;
+            }
+        }
+
+        .average {
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            margin: 30px;
+            margin-top: 50px;
+            animation: pop 2s;
+        }
+
+
+        .describe {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(135, 3, 201);
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: calc(100% - 100px);
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .avoid, .recommended {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        .information {
+            margin-bottom: 30px;
+        }
+
+        .avr {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px;
+            color: green;
+        }
+
+        .reference {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="average"><b>ค่าPhosphorusในเลือดของท่านต่ำกว่าเกณฑ์</b></div>
+    <div class="describe">ค่า Phosphorus คือ ระดับฟอสฟอรัสที่มีอยู่ในกระแสเลือดของร่างกาย ฟอสฟอรัสเป็นแร่ธาตุที่สำคัญต่อร่างกาย ฟอสฟอรัสมีบทบาทสำคัญในหลายกระบวนการทางชีวเคมี เช่น การสร้างกระดูกและฟัน, การผลิตพลังงาน, และการควบคุมการทำงานของเซลล์ซึ่งเป็นแร่ธาตุที่สำคัญต่อร่างกาย</div>
+    <div class="content">
+        <div class="avoid">
+            <div class="heading">อาหารที่ควรหลีกเลี่ยง</div>
+            <div class="information">1. อาหารที่มีฟอสเฟตต่ำ เช่น แตงกวา กะหล่ำปลี ผักกาดขาว แอปเปิ้ล องุ่น ขนมปังขาว ข้าวขาว พาสต้า</div>
+            <div class="information">2. ขนมหวานและอาหารขยะ เช่น ขนมกรุบกรอบ ขนมอบสำเร็จรูป</div>
+            <div class="information">3. เครื่องดื่มที่มีคาเฟอีนสูง เช่น กาแฟ ชา เครื่องดื่มชูกำลัง</div>
+            <div class="information">4. เครื่องดื่มแอลกอฮอล์ เช่น เหล้า เบียร์ ไวน์</div>
+        </div>
+        <div class="recommended">
+            <div class="heading">อาหารที่แนะนำ</div>
+            <div class="information">1. ผลิตภัณฑ์จากนม เช่น นม ชีส โยเกิร์ต</div>
+            <div class="information">2. เนื้อสัตว์และปลา เช่น เนื้อไก่ เนื้อหมู ปลาทูน่า ปลาซาร์ดีน</div>
+            <div class="information">3. ถั่วและเมล็ดพืช เช่น ถั่วลิสง อัลมอนด์ เมล็ดฟักทอง</div>
+            <div class="information">4. ธัญพืชเต็มเมล็ด เช่น ข้าวโอ๊ต ข้าวกล้อง ข้าวสาลีเต็มเมล็ด</div>
+            <div class="information">5. โปรตีนที่มีฟอสฟอรัสสูง เช่น ไข่</div>
+        </div>
+    </div>
+    <div class="avr">เกณฑ์ปกติอยู่ที่ 3.5-5.5 mEq/L</div>
+    <div class="reference">อ้างอิงข้อมูลจาก
+        <ol><a href="https://sriphat.med.cmu.ac.th/th/knowledge-63" class="link" target="_blank">https://sriphat.med.cmu.ac.th/th/knowledge-63</a></ol>
+        <ol><a href="https://www.ncbi.nlm.nih.gov/books/NBK493172/" class="link" target="_blank">https://www.ncbi.nlm.nih.gov/books/NBK493172/</a></ol>
+        <ol><a href="https://my.clevelandclinic.org/health/diseases/24040-hypophosphatemia" class="link" target="_blank">https://my.clevelandclinic.org/health/diseases/24040-hypophosphatemia</a></ol>
+    </div>
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
