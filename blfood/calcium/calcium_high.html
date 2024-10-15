@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบปริมาณสารในกระแสเลือด</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+                color: red;
+            }
+            50% {
+                transform: scale(1.2);
+                color: darkred;
+            }
+            100% {
+                transform: scale(1);
+                color: red;
+            }
+        }
+
+        .average {
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            margin: 30px;
+            margin-top: 50px;
+            animation: pop 2s;
+        }
+
+        .describe {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(135, 3, 201);
+            margin: 20px 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: calc(100% - 100px);
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .avoid, .recommended {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+            margin-bottom: 20px;
+        }
+
+        .information {
+            margin-bottom: 30px;
+        }
+
+        .avr {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px;
+            color: green;
+        }
+
+        .reference {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+        }
+
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="average"><b>ค่าCalciumในเลือดของท่านสูงเกินเกณฑ์</b></div>
+    <div class="describe">ค่า Calcium คือ ปริมาณแคลเซียมที่อยู่ในกระแสเลือด ซึ่งเป็นสิ่งสำคัญในการทำงานของร่างกายหลายอย่าง เช่น การทำงานของกล้ามเนื้อ ระบบประสาท การแข็งตัวของเลือด และการทำงานของหัวใจ</div>
+    <div class="content">
+        <div class="avoid">
+            <div class="heading">อาหารที่ควรหลีกเลี่ยง</div>
+            <div class="information">1. อาหารที่มีแคลเซียมสูง เช่น นม ชีส โยเกิร์ต กุ้ง หอยแมลงภู่ คะน้า บร็อคโคลี่</div>
+            <div class="information">2. อาหารที่มีวิตามินดีสูง เช่น ปลาแซลมอน ปลาแมคเคอเรล ปลาทูน่า ปลาซาร์ดีน น้ำมันตับปลา ไข่แดง</div>
+            <div class="information">3. อาหารที่มีวิตามินเอสูง เช่น ตับสัตว์ มันเทศ แครอท ผักโขม ไข่แดง</div>
+            <div class="information">4. เครื่องดื่มที่มีคาเฟอีนสูง เช่น กาแฟ ชา เครื่องดื่มชูกำลัง</div>
+        </div>
+        <div class="recommended">
+            <div class="heading">อาหารที่แนะนำ</div>
+            <div class="information">1. อาหารที่มีฟอสฟอรัสสูง เช่น เนื้อสัตว์ ถั่วเหลือง ถั่วลิสง ถั่วเลนทิล เมล็ดฟักทอง</div>
+            <div class="information">2. อาหารที่มีแมกนีเซียมสูง เช่น อะโวคาโด ถั่วอัลมอนด์ เม็ดมะม่วงหิมพานต์</div>
+            <div class="information">3. อาหารที่มีโซเดียมต่ำ เช่น แอปเปิ้ล แตงโม ข้าวโอ๊ต ควินัว</div>
+        </div>
+    </div>
+    <div class="avr">เกณฑ์ปกติอยู่ที่ 8.5-10.5 mg/dL</div>
+    <div class="reference">อ้างอิงข้อมูลจาก
+        <ol><a href="https://sriphat.med.cmu.ac.th/th/knowledge-502" class="link" target="_blank">https://sriphat.med.cmu.ac.th/th/knowledge-502</a></ol>
+        <ol><a href="https://www.paolohospital.com/th-TH/center/Article/Details/ตรวจสุขภาพ-วัคซีน/แคลเซียมในเลือดผิดปกติอันตรายกว่าที่คิด" class="link" target="_blank">https://www.paolohospital.com/th-TH/center/Article/Details/ตรวจสุขภาพ-วัคซีน/แคลเซียมในเลือดผิดปกติอันตรายกว่าที่คิด</a></ol>
+        <ol><a href="https://www.medparkhospital.com/disease-and-treatment/hypercalcemia" class="link" target="_blank">https://www.medparkhospital.com/disease-and-treatment/hypercalcemia</a></ol>
+        <ol><a href="https://www.mayoclinic.org/diseases-conditions/hypercalcemia/symptoms-causes/syc-20355523" class="link" target="_blank">https://www.mayoclinic.org/diseases-conditions/hypercalcemia/symptoms-causes/syc-20355523</a></ol>
+    </div>
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

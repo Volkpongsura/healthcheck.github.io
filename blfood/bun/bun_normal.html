@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบปริมาณสารในกระแสเลือด</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Sarabun', sans-serif;
+            background-color: #f6fff6;
+        }
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+                color: green;
+            }
+            50% {
+                transform: scale(1.2);
+                color: darkgreen;
+            }
+            100% {
+                transform: scale(1);
+                color: green;
+            }
+        }
+
+        .average {
+            text-align: center;
+            font-size: 30px;
+            color: green;
+            margin: 30px;
+            margin-top: 50px;
+            animation: pop 2s;
+        }
+
+
+        .describe {
+            text-align: center;
+            font-size: 20px;
+            color: rgb(135, 3, 201);
+            margin: 20px 0;
+        }
+
+        .avr {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px;
+            color: green;
+        }
+
+        .reference {
+            text-align: center;
+            font-size: 16px;
+            margin: 20px;
+        }
+        
+        .back-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-button {
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="average"><B>ค่าBUNในเลือดของท่านอยู่ในเกณฑ์ปกติ</B></div>
+    <div class="describe">ค่า BUN คือ ค่าที่มาจากการเจาะเลือดตรวจค่าไต เพื่อประเมินคุณภาพเลือด โดยนำไปวัดค่าไนโตรเจนจากส่วนประกอบของยูเรียว่ามีปริมาณรั่วออกมาในกระแสเลือดมากน้อยแค่ไหน</div>
+    <div class="avr">เกณฑ์ปกติของผู้ใหญ่อยู่ที่ 10-20 mg/dL<br>เกณฑ์ปกติของเด็กอยู่ที่ 5-18 mg/dL</div>
+    <div class="reference">อ้างอิงข้อมูลจาก
+        <ol><a href="https://www.pptvhd36.com/health/care/5071" class="link" target="_blank">https://www.pptvhd36.com/health/care/5071</a></ol>
+        <ol><a href="https://samitivejchinatown.com/th/article/health-check/renal-function-test" class="link" target="_blank">https://samitivejchinatown.com/th/article/health-check/renal-function-test</a></ol>           
+        <ol><a href="https://vichaivej-nongkhaem.com/health-info/ตรวจการทำงานไต" class="link" target="_blank">https://vichaivej-nongkhaem.com/health-info/ตรวจการทำงานไต</a></ol>
+    </div>
+    <div class="back-button-container">
+        <button class="back-button" onclick="goBack()">ย้อนกลับ</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
